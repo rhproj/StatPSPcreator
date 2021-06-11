@@ -40,7 +40,6 @@ namespace PSPcreator00
             string dir = AppDomain.CurrentDomain.BaseDirectory + tbTitle.Text;
 
             int qLines = int.Parse(tbEnd.Text) - int.Parse(tbStart.Text) + 1;
-            //int qPSPfiles = int.Parse(tbPSPend.Text) - int.Parse(tbPSPstart.Text) + 1;
 
             int[] Aay = new int[qLines*3];
 
@@ -53,7 +52,7 @@ namespace PSPcreator00
 
             if (!rbRows.Checked && !rbColumns.Checked || tbStart.Text.Length == 0 || tbEnd.Text.Length == 0 || tbPSPstart.Text.Length == 0 || tbPSPend.Text.Length == 0 || tbFm1.Text.Length == 0 || tbFm2.Text.Length == 0 || tbSect1.Text.Length == 0 || tbSect2.Text.Length == 0) //&& 
             {
-                MessageBox.Show("Что-то осталось не заполненным? :)");  //
+                MessageBox.Show("Остались незаполненные поля");  //
             }
             else if (rbRows.Checked)
             {
@@ -132,7 +131,6 @@ namespace PSPcreator00
                 }
                 MessageBox.Show("Готово!");
             }
-            //desided to put it here so sW of .LINK been open only once
         }
 
         private void tbFm1_KeyPress(object sender, KeyPressEventArgs e)
@@ -149,30 +147,3 @@ namespace PSPcreator00
         }
     }
 }
-
-
-
-
-//for (int i = 0; i < Aay.Length; i++)  //to check if array was filled the way i wanted
-//{
-//    sW.WriteLine(Aay[i].ToString());
-//}
-
-
-//for (int i = 1; i <= 3*(int.Parse(tbEnd.Text) - int.Parse(tbStart.Text)+1); i++)
-//{
-//    if (i % 3 == 0)
-//    {
-//        sW.WriteLine($"{i} = g{i-1} - g{i-2}");
-//    }
-//    else
-//    {
-//        sW.WriteLine($@"{i}= \{tbStart.Text}");
-//        //sW.WriteLine($@"{i}=2\"); 
-//    }
-
-//    //else if (i % 2 == 0)
-//    //{
-//    //    sW.WriteLine($"{i}= 2"); 
-//    //}
-//}
